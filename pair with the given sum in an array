@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+// Naive method to find a pair in an array with a given sum
+void findPair(int nums[], int n, int target)
+{
+	
+	for (int i = 0; i < n - 1; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			// if the desired sum is found, print it
+			if (nums[i] + nums[j] == target)
+			{
+				printf("Pair found (%d, %d)\n", nums[i], nums[j]);
+				return;
+			}
+		}
+	}
+
+	
+	printf("Pair not found");
+}
+
+int main(void)
+{
+	int nums[] = { 8, 7, 4, 5, 3, 6, 10 };
+	int target = 10;
+
+	int n = sizeof(nums)/sizeof(nums[0]);
+
+	findPair(nums, n, target);
+
+	return 0;
+}
